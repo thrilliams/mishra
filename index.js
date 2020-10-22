@@ -5,7 +5,7 @@ const secret = require('./secret.json');
 
 const client = new Client({
     owner: '294625075934527495', // thrilliams#5489, change if you want
-    commandPrefix: 'm!'
+    commandPrefix: '!m'
 });
 
 client
@@ -13,7 +13,7 @@ client
         console.log(`Logged in as ${client.user.tag} (${client.user.id})`);
         client.user.setPresence({
             activity: {
-                name: 'm! help',
+                name: '!m help',
                 type: 'WATCHING'
             }
         });
@@ -24,6 +24,7 @@ client.setProvider(new LowDBProvider(path.join(process.env.PWD, 'db.json'))).cat
 
 client.registry
     .registerGroups([
+        ['buildrooms', 'Build rooms'],
         ['util', 'Utility']
     ])
     .registerDefaultTypes()
