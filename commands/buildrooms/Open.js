@@ -1,5 +1,5 @@
 const { MessageAttachment } = require('discord.js');
-const { resolveUrl } = require('../../api/resolveUrl.js');
+const { resolveUrl } = require('../../api/utilities.js');
 const { Command } = require('discord.js-commando');
 
 module.exports = class Open extends Command {
