@@ -10,7 +10,7 @@ const fetch = require('node-fetch');
 const { MessageEmbed } = require('discord.js');
 const { parseMana, parseText } = require('./api/utilities.js');
 
-const xmlUrl = 'https://cdn.discordapp.com/attachments/706352828398043146/768586146296758292/CDH.Upload.14.5_Ihsan_X_cant_be_Zero.xml'; // TODO: Find a way to automate this so I don't need to update the source code every time trix updates the xml
+const xmlUrl = 'https://cdn.discordapp.com/attachments/706352828398043146/773944982775922738/CDH.Upload.15.1.xml'; // TODO: Find a way to automate this so I don't need to update the source code every time trix updates the xml
 
 const client = new Client({
     owner: '294625075934527495', // thrilliams#5489, change if you want
@@ -61,7 +61,7 @@ client
             } else {
                 let card = matches[0];
 
-                embed.setTitle(`${card.name}${card.cost ? ' ' + parseMana(client, card.prop.manacost) : ''}`);
+                embed.setTitle(`${card.name}${card.prop.manacost ? ' ' + parseMana(client, card.prop.manacost) : ''}`);
                 embed.setThumbnail(card.set.picurl);
                 embed.setDescription(`${card.prop.type}\n${parseText(client, card.text)}${card.prop.pt ? '\n' + card.prop.pt : ''}`);
             }
